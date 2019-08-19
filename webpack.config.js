@@ -1,16 +1,16 @@
-const path = require("path");
-const HtmlWebPackPlugin = require("html-webpack-plugin");
+const path = require('path');
+const HtmlWebPackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   output: {
-    path: path.resolve(__dirname, "public"),
-    filename: "bundle.js",
-    publicPath: "/",
+    path: path.resolve(__dirname, 'public'),
+    filename: 'bundle.js',
+    publicPath: '/',
   },
-  devtool: "source-map",
+  devtool: 'source-map',
   resolve: {
-    extensions: [".ts", ".tsx", ".js"],
-    modules: ["src", "node_modules"],
+    extensions: ['.ts', '.tsx', '.js'],
+    modules: ['src', 'node_modules'],
   },
   module: {
     rules: [
@@ -19,29 +19,26 @@ module.exports = {
         exclude: /node_modules/,
         use: [
           {
-            loader: "ts-loader",
+            loader: 'ts-loader',
           },
         ],
       },
 
       {
         test: /\.css$/,
-        use: ["style-loader", "css-loader"],
+        use: ['style-loader', 'css-loader'],
       },
     ],
   },
-  externals: {
-    react: "React",
-    "react-dom": "ReactDOM",
-  },
   plugins: [
     new HtmlWebPackPlugin({
-      template: "./public/index.html",
-      filename: "./index.html",
+      template: './public/index.html',
+      filename: './index.html',
     }),
   ],
   devServer: {
-    publicPath: "/",
+    publicPath: '/',
     port: 8080,
+    historyApiFallback: true,
   },
 };

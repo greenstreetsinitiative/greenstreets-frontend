@@ -1,9 +1,5 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import { createStore } from 'redux';
-import App from './App';
+import routes from './routes';
 
-ReactDOM.render(
-  <App compiler='TypeScript' framework='React' />,
-  document.getElementById('example'),
-);
+ReactDOM.render(routes, document.getElementById('root'));

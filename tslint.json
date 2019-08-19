@@ -6,6 +6,7 @@
     "no-submodule-imports": false,
     "semicolon": [true, "always", "strict-bound-class-methods"],
     "arrow-parens": false,
-    "quotemark": [true, "single", "jsx-single"]
+    "quotemark": [true, "single", "jsx-single"],
+    "jsx-boolean-value": [false]
   }
 }
